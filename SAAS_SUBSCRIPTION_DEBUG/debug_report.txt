@@ -1,0 +1,10 @@
+1. Phân tích lỗi
+Lỗi nằm trong vòng lặp duyệt mảng:
+if (user_list[0].days_overdue <= 3) {
+    total_revenue += user_list[0].monthly_fee;
+}
+
+2. Test Cases
+Trường hợp kiểm thử	Dữ liệu đầu vào	Kết quả sai thực tế	Kết quả đúng mong đợi
+TC01 - Tài khoản quá hạn > 3 ngày	TK 1002, phí 90000, quá hạn 5 ngày	Có thể hiển thị "Hop le" và cộng 180000 VND do kiểm tra user_list[0]	Hiển thị "Qua han", không cộng 90000 VND
+TC02 - Tổng doanh thu nhiều tài khoản	1001: 180000/0 ngày; 1002: 90000/5 ngày; 1003: 260000/1 ngày; 1004: 90000/4 ngày	Có thể cộng 180000 × 4 = 720000 VND	Chỉ cộng TK 1001 và TK 1003: 180000 + 260000 = 440000 VND
